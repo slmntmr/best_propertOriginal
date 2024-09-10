@@ -22,4 +22,9 @@ public class UserResponse {
     private String email; // Kullanıcının e-posta adresi.
     private String phone; // Kullanıcının telefon numarası.
     private String role; // Kullanıcının rolü (örneğin, "Customer").
+
+
+
+    public UserResponse(Long id, String firstName) {
+    }
 }

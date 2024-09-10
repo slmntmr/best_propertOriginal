@@ -17,7 +17,8 @@ import java.time.LocalDateTime;
 
 @Entity // Bu sınıfın bir JPA varlığı olduğunu belirtir ve veritabanında bir tabloya karşılık gelir.
 @Table(name = "contact_messages") // Veritabanında kullanılacak tablo adı.
-public class ContactMessage implements Serializable { // 'Serializable' arayüzü, bu sınıfın nesnelerinin seri hale getirilebilir olmasını sağlar.
+public class ContactMessage implements Serializable { // 'Serializable' arayüzü, bu sınıfın nesnelerinin seri
+    // hale getirilebilir olmasını sağlar.
 
     @Id // Bu alanın veritabanında birincil anahtar olduğunu belirtir.
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Birincil anahtarın otomatik olarak ve benzersiz bir şekilde oluşturulacağını belirtir.

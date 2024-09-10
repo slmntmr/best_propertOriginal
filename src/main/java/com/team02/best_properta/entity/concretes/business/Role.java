@@ -1,6 +1,5 @@
 package com.team02.best_properta.entity.concretes.business;
 
-import com.team02.best_properta.entity.concretes.user.UserRole;
 import com.team02.best_properta.entity.enums.RoleType;
 import jakarta.persistence.*;
 import lombok.*;
@@ -30,7 +29,5 @@ public class Role {
     private RoleType roleType;
 
 
-    @OneToMany(mappedBy = "role") // Role ile UserRole arasında bire çok ilişki olduğunu belirtir.
-    private List<UserRole> userRoles; // Bu role'e sahip olan kullanıcılar listesi.
 }
 

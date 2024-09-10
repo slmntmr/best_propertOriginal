@@ -119,4 +119,16 @@ public class CategoryController {
 
 
 
+
+
+
+    @GetMapping("/count/active")
+    public int getActiveCategoriesCount() {
+        return categoryService.countActiveCategories();
+    }
+
+
+
+
+
 }

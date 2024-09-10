@@ -48,18 +48,17 @@ public class UsersMapper {
 
 
 
-
     public UserResponse mapUserToUserResponse(Users user){
-        return  UserResponse.builder()
+        return UserResponse.builder()
                 .id(user.getId())
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
                 .email(user.getEmail())
-                .role(user.getEmail())
+                .role(user.getRole() != null ? user.getRole().getRoleName() : null) // Güncellendi
                 .phone(user.getPhone())
                 .build();
-
     }
+
 
 
 

@@ -51,8 +51,6 @@ public class Users {
     @Column(name = "update_at") // Bu alanın boş olabileceğini belirtir.
     private LocalDateTime updateAt; // Kullanıcının güncellenme tarihi (DateTime, Nullable).
 
-    @OneToMany(mappedBy = "user") // Kullanıcı ile UserRole arasında bire çok ilişki olduğunu belirtir.
-    private List<UserRole> userRoles; // Kullanıcının sahip olduğu roller listesi.
 
 
     @OneToOne // Her kullanıcının bir rolü olabilir.

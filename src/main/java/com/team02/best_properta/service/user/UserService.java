@@ -31,6 +31,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.security.access.AccessDeniedException;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -374,6 +375,25 @@ public  class UserService {
         // Yanıt döndür
         return userMapper.toUserDeleteResponse(user);
     }
+
+
+
+    //******************************************************************************************
+
+
+    public long countUsers() {
+        return userRepository.countUsers();
+    }
+
+    public List<Users> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public List<Users> getUsersByRole(String role) {
+        return userRepository.findByRole(role);
+    }
+
+
 
 
 }

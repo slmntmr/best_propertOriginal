@@ -141,4 +141,18 @@ public class CategoryService {
                 .orElseThrow(() -> new ResourceNotFoundException("Category not found with slug: " + slug));
         return categoryMapper.mapCategoryToCategoryResponse(category);
     }
+
+
+
+    public int countActiveCategories() {
+        return categoryRepository.countByIsActiveTrue();
+    }
+
+
+
+
+
+
+
+
 }
