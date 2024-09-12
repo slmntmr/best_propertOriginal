@@ -41,4 +41,10 @@ public interface TourRequestsRepository extends JpaRepository<TourRequest, Long>
 
     Optional<TourRequest> findById(Long id);
 
+
+    @Query("SELECT COUNT(tr) FROM TourRequest tr WHERE tr.advert.id = :advertId")
+    int countTourRequestsByAdvertId(@Param("advertId") Long advertId);
+    List<TourRequest> findByAdvertId(Long advertId);
+    void deleteByAdvertId(Long advertId);
+
 }

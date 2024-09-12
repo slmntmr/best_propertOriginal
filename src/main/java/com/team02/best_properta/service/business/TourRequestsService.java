@@ -1,28 +1,15 @@
 package com.team02.best_properta.service.business;
 
 
-import com.team02.best_properta.entity.concretes.business.Advert;
 import com.team02.best_properta.entity.concretes.business.TourRequest;
-import com.team02.best_properta.exception.ResourceNotFoundException;
 import com.team02.best_properta.payload.mappers.TourRequestMapper;
-import com.team02.best_properta.payload.request.business.TourRequestAdmin;
-import com.team02.best_properta.payload.request.business.TourRequestDto;
-import com.team02.best_properta.payload.request.business.TourRequestUpdateRequest;
-import com.team02.best_properta.payload.response.business.TourRequestCancelResponse;
-import com.team02.best_properta.payload.response.business.TourRequestResponse;
 import com.team02.best_properta.repository.business.AdvertsRepository;
 import com.team02.best_properta.repository.business.TourRequestsRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -205,8 +192,18 @@ public class TourRequestsService {
 
         return mapToResponse(tourRequest);
     }*/
+//u.h***************************************************
 
 
-
+    private final TourRequestsRepository tourRequestRepository;
+    public int countTourRequestsByAdvertId(Long id) {
+        return tourRequestRepository.countTourRequestsByAdvertId(id);
+    }
+    public List<TourRequest> getTourRequestsByAdvertId(Long advertId) {
+        return tourRequestRepository.findByAdvertId(advertId);
+    }
+    public void deleteByAdvertId(Long advertId) {
+        tourRequestRepository.deleteByAdvertId(advertId);
+    }
 
 }

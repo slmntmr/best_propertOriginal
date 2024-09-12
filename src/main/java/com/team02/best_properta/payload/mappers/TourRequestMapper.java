@@ -3,9 +3,8 @@ package com.team02.best_properta.payload.mappers;
 import com.team02.best_properta.entity.concretes.business.TourRequest;
 
 import com.team02.best_properta.payload.request.business.TourRequestAdmin;
-import com.team02.best_properta.payload.request.business.TourRequestDto;
+import com.team02.best_properta.payload.request.business.TourRequestDTO;
 import com.team02.best_properta.payload.response.business.TourRequestResponse;
-import lombok.Builder;
 import org.springframework.stereotype.Component;
 
 
@@ -29,10 +28,10 @@ public class TourRequestMapper {
                 .build();
     }
 
-    public TourRequestDto mapTourRequestToTourRequestDto(TourRequest tourRequest) {
-        return TourRequestDto.builder()
+    public TourRequestDTO mapTourRequestToTourRequestDto(TourRequest tourRequest) {
+        return TourRequestDTO.builder()
                 .id(tourRequest.getId())
-                .tourDate(tourRequest.getTourDate().toString())
+                .tourDate(tourRequest.getTourDate())
                 .advert(tourRequest.getAdvert())
                 .ownerUser(tourRequest.getOwnerUser())
                 .build();

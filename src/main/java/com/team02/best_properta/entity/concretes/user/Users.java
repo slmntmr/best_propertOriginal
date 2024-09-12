@@ -1,5 +1,6 @@
 package com.team02.best_properta.entity.concretes.user;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.team02.best_properta.entity.concretes.business.*;
 import jakarta.persistence.*;
@@ -52,11 +53,11 @@ public class Users {
     private LocalDateTime updateAt; // Kullanıcının güncellenme tarihi (DateTime, Nullable).
 
 
-
-    @OneToOne // Her kullanıcının bir rolü olabilir.
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // Bu alanın sadece JSON'dan Java nesnesine dönüştürülürken
-    // kullanılacağını belirtir, JSON çıktısında yer almaz.
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    @JsonBackReference // Döngüsel bağımlılığı engeller
     private Role role;
+
 
     @OneToMany(mappedBy = "user") // Kullanıcı ile Advert arasında bire çok ilişki olduğunu belirtir.
     private List<Advert> adverts; // Kullanıcının oluşturduğu ilanlar listesi.

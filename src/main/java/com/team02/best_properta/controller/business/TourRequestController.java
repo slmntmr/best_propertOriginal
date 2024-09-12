@@ -1,8 +1,10 @@
+
 /*
 package com.team02.best_properta.controller.business;
 
 import com.team02.best_properta.entity.concretes.business.TourRequest;
 import com.team02.best_properta.payload.request.business.TourRequestAdmin;
+import com.team02.best_properta.payload.request.business.TourRequestDTO;
 import com.team02.best_properta.payload.request.business.TourRequestDto;
 import com.team02.best_properta.payload.request.business.TourRequestUpdateRequest;
 import com.team02.best_properta.payload.response.business.TourRequestCancelResponse;
@@ -45,7 +47,7 @@ public class TourRequestController {
 //*************************************************************************************
 
     @GetMapping("/auth")
-    public List<TourRequestDto> getAuthenticatedUserTourRequests(
+    public List<TourRequestDTO> getAuthenticatedUserTourRequests(
             @AuthenticationPrincipal UserDetails userDetails,
             @RequestParam(required = false) String q,
             @RequestParam(defaultValue = "0") int page,
@@ -115,4 +117,5 @@ public class TourRequestController {
     }
 
 
-}*/
+}
+*/

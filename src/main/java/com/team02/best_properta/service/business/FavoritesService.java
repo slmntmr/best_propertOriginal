@@ -22,6 +22,11 @@ public class FavoritesService {
     //*****************************************************************
 
 
+    public void deleteByAdvertId(Long advertId) {
+        favoritesRepository.deleteByAdvertId(advertId);
+    }
+
+
 
 
 }

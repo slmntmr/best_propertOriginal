@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -19,4 +20,8 @@ public interface ImageRepository extends JpaRepository<Image, Long> {
     @Query("UPDATE Image i SET i.featured = false WHERE i.advert.id = :advertId")
     void updateAllFeaturedByAdvertId(Long advertId);
 
+
+
+    List<Image> findByAdvertId(Long advertId);  // Advert ID'ye göre image'leri getiren method
+    void deleteByAdvertId(Long advertId);
 }

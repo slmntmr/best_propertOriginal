@@ -88,4 +88,13 @@ public class CategoryPropertyKeyService {
         return categoryPropertyKeyRepository.findById(id).orElseThrow(()->
                 new ResourceNotFoundException(String.format(ErrorMessages.NOT_FOUND_CATEGORY_PROPERTYKEY_MESSAGE, id)));
     }
+
+
+    //**********************************************************
+
+
+    public List<CategoryPropertyKey> getPropertyKeysByCategoryId(Long categoryId) {
+        return categoryPropertyKeyRepository.findByCategoryId(categoryId);
+    }
+
 }

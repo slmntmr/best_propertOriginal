@@ -17,4 +17,11 @@ public class LogsService {
         }
         logsRepository.deleteByUserId(userId);
     }
+
+    //********************************************************************
+
+    public void deleteByAdvertId(Long advertId) {
+        logsRepository.deleteByAdvertId(advertId);
+    }
+
 }

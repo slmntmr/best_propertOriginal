@@ -1,6 +1,7 @@
 package com.team02.best_properta.service.user;
 
 
+import com.team02.best_properta.entity.concretes.business.Role;
 import com.team02.best_properta.payload.request.user.*;
 import com.team02.best_properta.security.jwt.JwtUtils;
 import org.springframework.data.domain.Pageable;
@@ -139,6 +140,7 @@ public  class UserService {
                 .build();
 
     }
+
 
 
     //******************************************************************************************

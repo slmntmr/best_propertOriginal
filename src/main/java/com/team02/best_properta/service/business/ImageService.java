@@ -1,3 +1,5 @@
+
+
 package com.team02.best_properta.service.business;
 
 
@@ -11,6 +13,7 @@ import com.team02.best_properta.payload.request.business.ImageRequest;
 import com.team02.best_properta.payload.response.business.ImageResponse;
 import com.team02.best_properta.repository.business.ImageRepository;
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,13 +22,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+/*@AllArgsConstructor*/
 public class ImageService {
 
+    @Setter
+    private ImageRepository imageRepository;
 
-    private final ImageRepository imageRepository;
-    private final AdvertsService advertService;
-    private final ImageMapper imageMapper;
+    @Setter
+    private AdvertsService advertService;
+
+    @Setter
+    private ImageMapper imageMapper;
+
+
 
     public Image getImageById(Long imageId) {
         return imageRepository.findById(imageId)
@@ -89,6 +98,17 @@ public class ImageService {
 
         // Kaydedilen entity'yi DTO'ya çevirip geri dönüyoruz
         return imageMapper.mapImageToImageResponse(savedImage);
+    }
+
+    //******************************************************
+    public List<Image> getImagesByAdvertId(Long advertId) {
+        return imageRepository.findByAdvertId(advertId);
+    }
+    public void deleteByAdvertId(Long advertId) {
+        imageRepository.deleteByAdvertId(advertId);
+    }
+    public void save(Image image) {
+        imageRepository.save(image);
     }
 
 }

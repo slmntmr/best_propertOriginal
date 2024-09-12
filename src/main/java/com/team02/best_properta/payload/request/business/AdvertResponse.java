@@ -1,9 +1,11 @@
-package com.team02.best_properta.payload.response.business;
-
+package com.team02.best_properta.payload.request.business;
 
 import com.team02.best_properta.entity.concretes.business.*;
 import com.team02.best_properta.entity.concretes.user.Users;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -29,12 +31,4 @@ public class AdvertResponse {
     private District district;
     private Users user;
     private Category category;
-
-    public AdvertResponse(Long id, String title) {
-
-    }
-
-  /*  public AdvertResponse(Long id, String title) {
-    }
-*/
 }
